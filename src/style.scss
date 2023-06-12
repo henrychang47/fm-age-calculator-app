@@ -1,0 +1,103 @@
+@use 'fonts.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Purple: hsl(259, 100%, 65%);
+  --LightRred: hsl(0, 100%, 67%);
+  --White: hsl(0, 0%, 100%);
+  --OffWhite: hsl(0, 0%, 94%);
+  --LightGrey: hsl(0, 0%, 86%);
+  --SmokeyGrey: hsl(0, 1%, 44%);
+  --OffBlack: hsl(0, 0%, 8%);
+}
+
+html,
+body {
+  height: 100svh;
+  width: 100svw;
+  font-size: 32px;
+  font-family: 'poppins';
+}
+
+body {
+  background-color: var(--OffWhite);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: relative;
+  background-color: var(--White);
+  width: min(95%, 28rem);
+  height: 21rem;
+  border-radius: 20px 20px 250px 20px;
+  padding: 0 4em 0 2em;
+}
+
+form {
+  display: flex;
+  padding: 1.5rem 0;
+  border-bottom: 3px solid var(--OffWhite);
+
+  label {
+    font-size: .5em;
+    display: flex;
+    flex-direction: column;
+    color: var(--SmokeyGrey);
+    text-transform: uppercase;
+    margin-right: 2em;
+    max-width: 10em;
+    min-width: 0;
+
+    span {
+      display: block;
+      font-weight: 700;
+      margin-bottom: .4em;
+      letter-spacing: .2em;
+    }
+  }
+
+  input {
+    font-weight: bold;
+    font-size: 1.5em;
+    border-radius: 5px;
+    border: .5px solid var(--LightGrey);
+    padding: 20px;
+    min-width: 0;
+  }
+
+
+}
+
+.calBtn {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--Purple);
+  position: absolute;
+  right: 6em;
+  top: 11.3em;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.result {
+  font-size: 2.5em;
+  font-weight: 800;
+  font-style: italic;
+  padding: .5em 0;
+
+  span {
+    color: var(--Purple);
+  }
+}
