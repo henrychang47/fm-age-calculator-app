@@ -69,15 +69,17 @@ form {
     }
   }
 
-  label.invalid {
-    color: red;
+  &.invalid {
+    span {
+      color: red;
+    }
 
     input {
       border-color: red;
       outline-color: red;
     }
 
-    .errorMsg {
+    .errorMsg.display {
       display: block;
     }
   }

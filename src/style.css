@@ -98,14 +98,14 @@ form label .errorMsg {
   margin-top: 0.5em;
   display: none;
 }
-form label.invalid {
+form.invalid span {
   color: red;
 }
-form label.invalid input {
+form.invalid input {
   border-color: red;
   outline-color: red;
 }
-form label.invalid .errorMsg {
+form.invalid .errorMsg.display {
   display: block;
 }
 form input {
