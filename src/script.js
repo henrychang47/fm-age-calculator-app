@@ -29,28 +29,37 @@ function executeCal() {
 }
 
 function checkInputs() {
-  let { day, month, year } = getValue();
   clearInvalid();
 
-  if (day === '') {
-    displayErrorMsg('day', 'empty');
+  let values = getValue();
+  let validInput = true;
+
+  Object.keys(values).forEach(key => {
+    if (values[key] === '') {
+      displayErrorMsg(key, 'empty');
+      validInput = false;
+      values[key] = 1;
+    }
+  })
+
+  let day = Number(values.day);
+  let month = Number(values.month);
+  let year = Number(values.year);
+
+  if (isNaN(day) || day < 1 || day > 31) {
+    displayErrorMsg('day', 'invalid');
+    validInput = false;
   }
-  else {
-    day = Number(day);
-    if (isNaN(day) || day < 1 || day > 31) displayErrorMsg('day', 'invalid');
+  if (isNaN(month) || month < 1 || month > 12) {
+    displayErrorMsg('month', 'invalid');
+    validInput = false;
   }
-  if (month === '') {
-    displayErrorMsg('month', 'empty')
-  } else {
-    month = Number(month);
-    if (isNaN(month) || month < 1 || month > 12) displayErrorMsg('month', 'invalid');
+  if (isNaN(year) || year < 1) {
+    displayErrorMsg('year', 'invalid');
+    validInput = false;
   }
-  if (year === '') {
-    displayErrorMsg('year', 'empty');
-  } else {
-    year = Number(year);
-    if (isNaN(year) || year < 1) displayErrorMsg('year', 'invalid');
-  }
+
+  return validInput;
 }
 
 function displayInvalid() {
