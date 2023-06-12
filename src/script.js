@@ -18,14 +18,30 @@ function getValue() {
   }
 }
 
-function setDate({ year, month, day }) {
+function setDate([year, month, day]) {
   yearNum.innerText = year;
   monthNum.innerText = month;
   dayNum.innerText = day;
 }
 
 function executeCal() {
-  checkInputs();
+  if (checkInputs()) {
+    setDate(calculateAge(getValue()));
+  } else {
+    setDate(['--', '--', '--']);
+  }
+}
+
+function calculateAge({ day, month, year }) {
+  const birthday = new Date(year, month - 1, day);
+  const today = new Date();
+  const ageInSecond = Math.floor((today - birthday) / 1000);
+  const ageInDay = Math.floor(ageInSecond / 86400);
+  const ageOfYear = Math.floor(ageInDay / 365);
+  const ageOfMonth = Math.floor(ageInDay / 30.437 % 12);
+  const ageOfDay = Math.floor(ageInDay % 30.437);
+
+  return [ageOfYear, ageOfMonth, ageOfDay];
 }
 
 function checkInputs() {

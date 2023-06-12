@@ -54,6 +54,7 @@ form {
     margin-right: 2em;
     max-width: 10em;
     min-width: 0;
+    position: relative;
 
     .inputLebel {
       display: block;
@@ -63,8 +64,9 @@ form {
     }
 
     .errorMsg {
+      position: absolute;
       font-size: .8em;
-      margin-top: .5em;
+      bottom: -2em;
       display: none;
     }
   }
@@ -113,10 +115,10 @@ form {
 }
 
 .result {
-  font-size: 2.5em;
+  font-size: 3em;
   font-weight: 800;
   font-style: italic;
-  padding: .5em 0;
+  padding: .1em 0;
 
   span {
     color: var(--Purple);
