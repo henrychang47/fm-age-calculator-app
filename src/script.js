@@ -94,6 +94,11 @@ function checkInputs() {
     validInput = false;
   }
 
+  if (new Date() < new Date(values.year, values.month - 1, values.day)) {
+    displayInvalid();
+    validInput = false;
+  }
+
   return validInput;
 }
 
