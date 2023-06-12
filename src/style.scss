@@ -95,6 +95,9 @@ form {
     min-width: 0;
   }
 
+  input:focus {
+    outline-color: var(--Purple);
+  }
 
 }
 
@@ -111,6 +114,7 @@ form {
 
   &:hover {
     cursor: pointer;
+    background-color: var(--OffBlack);
   }
 }
 

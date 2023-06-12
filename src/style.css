@@ -118,6 +118,9 @@ form input {
   padding: 1em;
   min-width: 0;
 }
+form input:focus {
+  outline-color: var(--Purple);
+}
 
 .calBtn {
   display: block;
@@ -132,6 +135,7 @@ form input {
 }
 .calBtn:hover {
   cursor: pointer;
+  background-color: var(--OffBlack);
 }
 
 .result {
