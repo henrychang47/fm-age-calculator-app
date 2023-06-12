@@ -87,11 +87,26 @@ form label {
   max-width: 10em;
   min-width: 0;
 }
-form label span {
+form label .inputLebel {
   display: block;
   font-weight: 700;
   margin-bottom: 0.4em;
   letter-spacing: 0.2em;
+}
+form label .errorMsg {
+  font-size: 0.8em;
+  margin-top: 0.5em;
+  display: none;
+}
+form label.invalid {
+  color: red;
+}
+form label.invalid input {
+  border-color: red;
+  outline-color: red;
+}
+form label.invalid .errorMsg {
+  display: block;
 }
 form input {
   font-weight: bold;

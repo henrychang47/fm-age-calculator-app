@@ -55,11 +55,30 @@ form {
     max-width: 10em;
     min-width: 0;
 
-    span {
+    .inputLebel {
       display: block;
       font-weight: 700;
       margin-bottom: .4em;
       letter-spacing: .2em;
+    }
+
+    .errorMsg {
+      font-size: .8em;
+      margin-top: .5em;
+      display: none;
+    }
+  }
+
+  label.invalid {
+    color: red;
+
+    input {
+      border-color: red;
+      outline-color: red;
+    }
+
+    .errorMsg {
+      display: block;
     }
   }
 
