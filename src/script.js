@@ -27,20 +27,20 @@ function setDate([year, month, day]) {
   }
   let [currentYear, currentMonth, currentDay] = [0, 0, 0];
 
-  let yearTimer = setInterval(() => {
+  const yearTimer = setInterval(() => {
     if (currentYear === year) clearInterval(yearTimer);
     yearNum.innerText = currentYear++;
   }, 1000 / year);
 
-  let monthTimer = setInterval(() => {
+  const monthTimer = setInterval(() => {
     if (currentMonth === month) clearInterval(monthTimer);
     monthNum.innerText = currentMonth++;
-  }, 1000 / month);
+  }, 800 / month);
 
-  let dayTimer = setInterval(() => {
+  const dayTimer = setInterval(() => {
     if (currentDay === day) clearInterval(dayTimer);
     dayNum.innerText = currentDay++;
-  }, 1000 / day);
+  }, 800 / day);
 }
 
 function executeCal() {
