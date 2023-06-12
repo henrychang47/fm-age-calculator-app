@@ -19,9 +19,28 @@ function getValue() {
 }
 
 function setDate([year, month, day]) {
-  yearNum.innerText = year;
-  monthNum.innerText = month;
-  dayNum.innerText = day;
+  if (isNaN(year)) {
+    yearNum.innerText = '--';
+    monthNum.innerText = '--';
+    dayNum.innerText = '--';
+    return;
+  }
+  let [currentYear, currentMonth, currentDay] = [0, 0, 0];
+
+  let yearTimer = setInterval(() => {
+    if (currentYear === year) clearInterval(yearTimer);
+    yearNum.innerText = currentYear++;
+  }, 1000 / year);
+
+  let monthTimer = setInterval(() => {
+    if (currentMonth === month) clearInterval(monthTimer);
+    monthNum.innerText = currentMonth++;
+  }, 1000 / month);
+
+  let dayTimer = setInterval(() => {
+    if (currentDay === day) clearInterval(dayTimer);
+    dayNum.innerText = currentDay++;
+  }, 1000 / day);
 }
 
 function executeCal() {
